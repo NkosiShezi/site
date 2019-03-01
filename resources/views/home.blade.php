@@ -36,6 +36,16 @@
         <nav class="nav-wrapper transparent" >
             <div class="container">
                 <a href="" class="brand-logo">Photo Ninja</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#">Photos</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <ul class="sidenav grey lighten-2" id="mobile-menu">
+                    <li><a href="#">Photos</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
             </div>
         </nav>
     </header>
