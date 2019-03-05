@@ -13,10 +13,10 @@
 
   <style>
       header{
-        background:url('img/man.jpg');
+        background:url('img/tech1.jpg');
         background-size: cover;
         background-position: center;
-        min-height: 1000px;
+        min-height: 400px;
       }
       .section {
             padding-top:4vw;
@@ -34,9 +34,18 @@
 
       @media screen and (max-width: 670px) {
           header{
-              min-height:500px
+              min-height:200px
           }
       }
+
+        body{min-height:200vh;}
+        .nav-wrapper{
+        transition:500ms ease;
+        background:transparent;
+        }
+        .nav-wrapper.scrolled{
+        background:#19005F;
+        }
   </style>
 
 
@@ -46,24 +55,26 @@
 
   <!-- navbar -->
     <header>
-        <nav class="nav-wrapper transparent" >
-            <div class="container">
-                <a href="" class="brand-logo">Photo Ninja</a>
-                <a href="" class="sidenav-trigger" data-target="mobile-menu">
-                    <i class="material-icons">menu</i>
-                </a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Photos</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <ul class="sidenav grey lighten-2" id="mobile-menu">
-                    <li><a href="#">Photos</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
+        <div class="navbar-fixed">
+            <nav class="nav-wrapper" >
+                <div class="container">
+                    <a href="" class="brand-logo">Photo Ninja</a>
+                    <a href="" class="sidenav-trigger" data-target="mobile-menu">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#">Photos</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <ul class="sidenav grey lighten-2" id="mobile-menu">
+                        <li><a href="#">Photos</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </header>
 
   <!-- photo / grid -->
@@ -102,7 +113,7 @@
   <!-- parallax -->
     <div class="parallax-container">
       <div class="parallax">
-        <img src="{{URL::asset('img/street.jpg')}}" alt="" class="resposive-img">
+        <img src="{{URL::asset('img/scroll1.png')}}" alt="" class="resposive-img">
       </div>
     </div>
     
@@ -144,7 +155,7 @@
 
  <div class="parallax-container">
       <div class="parallax">
-        <img src="{{URL::asset('img/stars.jpg')}}" alt="" class="resposive-img">
+        <img src="{{URL::asset('img/citylights1.jpg')}}" alt="" class="resposive-img">
       </div>
     </div>
     
@@ -173,6 +184,11 @@
           $('.materialboxed').materialbox();  
           $('.parallax').parallax();
           $('.tabs').tabs();
+          
+
+          $(window).scroll(function(){
+	            $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
+            });
 
     });
   </script>
